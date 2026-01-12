@@ -146,6 +146,10 @@
     @apply btn-base hover:bg-secondary px-4 py-2;
   }
 
+  .social-icon {
+    @apply w-10 h-10 flex items-center justify-center rounded-full border border-border text-muted-foreground hover:text-foreground hover:border-primary hover:scale-110 transition-all duration-200;
+  }
+
   .skill-tag {
     @apply px-3 py-1.5 bg-secondary text-secondary-foreground rounded-md text-sm font-medium;
   }
