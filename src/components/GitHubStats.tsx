@@ -61,24 +61,38 @@ const GitHubStats = () => {
   }
 
   return (
-    <div className="flex flex-wrap justify-center md:justify-start gap-8 md:gap-12 mt-8 pt-8 border-t border-border">
+    <div className="mt-10 pt-8 border-t border-border">
+  <h3 className="text-sm font-medium tracking-wider uppercase text-muted-foreground mb-6 text-center md:text-left">
+    Development Activity
+  </h3>
+
+  <div className="flex flex-wrap justify-center md:justify-start gap-8 md:gap-12">
+    {/* Active Since */}
+    {stats.activeSince && (
       <StatItem 
-        value={stats.publicRepos} 
-        label="Public Repositories" 
+        value={stats.activeSince}
+        label="Active Since"
         delay={0}
       />
-      <StatItem 
-        value={stats.totalCommits} 
-        label="Total Commits" 
-        suffix="+"
-        delay={150}
-      />
-      <StatItem 
-        value={stats.productionProjects} 
-        label="Production Projects" 
-        delay={300}
-      />
-    </div>
+    )}
+
+    {/* Public Repos */}
+    <StatItem 
+      value={stats.publicRepos} 
+      label="Public Repositories" 
+      delay={150}
+    />
+
+    {/* Commits */}
+    <StatItem 
+      value={stats.totalCommits} 
+      label="Total Commits" 
+      suffix="+"
+      delay={300}
+    />
+  </div>
+</div>
+
   );
 };
 

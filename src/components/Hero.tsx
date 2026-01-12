@@ -78,15 +78,12 @@ const Hero = () => {
           <div className="flex-shrink-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <div className="relative">
               <div className="w-48 h-48 md:w-56 md:h-56 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 border border-border overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                  <svg 
-                    className="w-24 h-24 opacity-50" 
-                    fill="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                  </svg>
-                </div>
+                <img
+                    src="/profile.jpeg"
+                    alt="Aditya Mohite profile photo"
+                    className="w-full h-full object-cover"
+                  />
+
               </div>
               {/* Decorative elements */}
               <div className="absolute -z-10 -top-4 -right-4 w-full h-full rounded-2xl border border-primary/20"></div>

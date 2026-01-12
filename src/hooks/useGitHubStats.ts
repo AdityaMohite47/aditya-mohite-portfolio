@@ -1,37 +1,34 @@
-import { useState, useEffect } from 'react';
-import { supabase } from '@/integrations/supabase/client';
+import { useEffect, useState } from 'react';
 
 interface GitHubStats {
   publicRepos: number;
   totalCommits: number;
-  productionProjects: number;
+  activeSince: number | null;
 }
 
-export const useGitHubStats = () => {
+export function useGitHubStats() {
   const [stats, setStats] = useState<GitHubStats | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    const fetchStats = async () => {
+    async function fetchStats() {
       try {
-        const { data, error } = await supabase.functions.invoke('github-stats');
-        
-        if (error) {
-          throw error;
-        }
-
+        const res = await fetch(
+          import.meta.env.VITE_GITHUB_STATS_URL
+        );
+        if (!res.ok) throw new Error();
+        const data = await res.json();
         setStats(data);
-      } catch (err) {
-        console.error('Failed to fetch GitHub stats:', err);
-        setError('Failed to load stats');
+      } catch {
+        setError(true);
       } finally {
         setLoading(false);
       }
-    };
+    }
 
     fetchStats();
   }, []);
 
   return { stats, loading, error };
-};
+}
