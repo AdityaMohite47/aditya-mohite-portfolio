@@ -31,15 +31,15 @@ const Hero = () => {
 
             {/* Resume + Social Icons Row */}
             <div className="flex flex-wrap items-center gap-4 justify-center md:justify-start mt-6 animate-fade-in" style={{ animationDelay: "0.5s" }}>
-              <a 
-                href="/resume.pdf" 
-                download="Aditya_Mohite_Resume.pdf"
+              <a
+                href="/Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-primary"
               >
                 <Download className="w-4 h-4" />
-                Download Resume
-              </a>
-              
+                View Resume
+              </a>    
               {/* Social Icons */}
               <div className="flex items-center gap-3">
                 <a 
