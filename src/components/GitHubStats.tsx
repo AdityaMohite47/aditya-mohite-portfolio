@@ -1,14 +1,24 @@
 import { useGitHubStats } from '@/hooks/useGitHubStats';
 import { useEffect, useState } from 'react';
 
+const SkeletonStat = () => (
+  <div className="text-center animate-pulse">
+    <div className="h-10 w-20 bg-muted rounded-md mx-auto" />
+    <div className="h-4 w-24 bg-muted rounded-md mt-2 mx-auto" />
+  </div>
+);
+
+
+
 interface StatItemProps {
   value: number;
   label: string;
   suffix?: string;
   delay: number;
+  animate?: boolean;
 }
 
-const StatItem = ({ value, label, suffix = '', delay }: StatItemProps) => {
+const StatItem = ({ value, label, suffix = '', delay, animate = true }: StatItemProps) => {
   const [displayValue, setDisplayValue] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -17,26 +27,34 @@ const StatItem = ({ value, label, suffix = '', delay }: StatItemProps) => {
     return () => clearTimeout(timer);
   }, [delay]);
 
-  useEffect(() => {
-    if (!isVisible || value === 0) return;
+useEffect(() => {
+  if (!isVisible) return;
 
-    const duration = 1500;
-    const steps = 30;
-    const increment = value / steps;
-    let current = 0;
+  // If animation is disabled, show value instantly
+  if (animate === false) {
+    setDisplayValue(value);
+    return;
+  }
 
-    const interval = setInterval(() => {
-      current += increment;
-      if (current >= value) {
-        setDisplayValue(value);
-        clearInterval(interval);
-      } else {
-        setDisplayValue(Math.floor(current));
-      }
-    }, duration / steps);
+  if (value === 0) return;
 
-    return () => clearInterval(interval);
-  }, [value, isVisible]);
+  const duration = 1500;
+  const steps = 30;
+  const increment = value / steps;
+  let current = 0;
+
+  const interval = setInterval(() => {
+    current += increment;
+    if (current >= value) {
+      setDisplayValue(value);
+      clearInterval(interval);
+    } else {
+      setDisplayValue(Math.floor(current));
+    }
+  }, duration / steps);
+
+  return () => clearInterval(interval);
+}, [value, isVisible, animate]);
 
   return (
     <div 
@@ -55,10 +73,19 @@ const StatItem = ({ value, label, suffix = '', delay }: StatItemProps) => {
 const GitHubStats = () => {
   const { stats, loading, error } = useGitHubStats();
 
-  // Don't render anything if loading, error, or no stats
-  if (loading || error || !stats) {
-    return null;
-  }
+ if (loading) {
+  return (
+    <div className="flex flex-wrap justify-center md:justify-start gap-8 md:gap-12 mt-8 pt-8 border-t border-border">
+      <SkeletonStat />
+      <SkeletonStat />
+      <SkeletonStat />
+    </div>
+  );
+}
+
+if (error || !stats) {
+  return null;
+}
 
   return (
     <div className="mt-10 pt-8 border-t border-border">
@@ -73,6 +100,7 @@ const GitHubStats = () => {
         value={stats.activeSince}
         label="Active Since"
         delay={0}
+        animate={false}
       />
     )}
 
@@ -81,6 +109,7 @@ const GitHubStats = () => {
       value={stats.publicRepos} 
       label="Public Repositories" 
       delay={150}
+      animate={true}
     />
 
     {/* Commits */}
@@ -89,6 +118,8 @@ const GitHubStats = () => {
       label="Total Commits" 
       suffix="+"
       delay={300}
+      animate={true}
+
     />
   </div>
 </div>

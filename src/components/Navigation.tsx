@@ -17,9 +17,12 @@ const Navigation = () => {
       <div className="section-container">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" className="text-lg font-semibold">
-            AM
-          </a>
+<a
+  href="/"
+  className="text-lg md:text-xl font-semibold tracking-tight text-foreground"
+>
+  Portfolio<span className="text-primary">.</span>
+</a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">

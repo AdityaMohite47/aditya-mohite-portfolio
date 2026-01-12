@@ -3,7 +3,7 @@ import GitHubStats from "./GitHubStats";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center section-container">
+    <section className="min-h-screen flex items-center section-container pt-20">
       <div className="w-full py-20 md:py-0">
         <div className="flex flex-col-reverse md:flex-row items-center gap-12 md:gap-16">
           {/* Text Content */}
@@ -49,10 +49,10 @@ const Hero = () => {
                   className="social-icon"
                   aria-label="GitHub Profile"
                 >
-                  <Github className="w-5 h-5" />
+                  <Github className="w-5 h-5"   />
                 </a>
                 <a 
-                  href="https://linkedin.com/in/adityamohite" 
+                  href="https://www.linkedin.com/in/aditya--mohite/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="social-icon"
@@ -61,7 +61,7 @@ const Hero = () => {
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a 
-                  href="mailto:aditya.mohite@example.com"
+                  href="mailto:mohiteaditya075@gmail.com"
                   className="social-icon"
                   aria-label="Email"
                 >

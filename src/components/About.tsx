@@ -10,7 +10,7 @@ const About = () => {
           </p>
           
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            I've spent considerable time working with Django for API development, MongoDB for data persistence, and tools like LangChain and LangGraph for building AI-driven applications. I approach each project with a focus on clean architecture and maintainable code.
+            I've spent considerable time working with Django and FastAPI for API development, MongoDB for data persistence, and tools like LangChain and LangGraph for building AI-driven applications. I approach each project with a focus on clean architecture and maintainable code.
           </p>
           
           <p className="text-lg text-muted-foreground leading-relaxed">
