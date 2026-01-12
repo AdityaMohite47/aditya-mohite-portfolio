@@ -1,4 +1,5 @@
-import { Github, Linkedin, FileText, ArrowDown } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowDown, Download } from "lucide-react";
+import GitHubStats from "./GitHubStats";
 
 const Hero = () => {
   return (
@@ -20,38 +21,57 @@ const Hero = () => {
               Focused on practical software solutions, backend development, and modern LLM workflows
             </p>
             
-            {/* CTA Buttons */}
+            {/* Primary CTA */}
             <div className="flex flex-wrap gap-3 justify-center md:justify-start animate-fade-in" style={{ animationDelay: "0.4s" }}>
               <a href="#projects" className="btn-primary">
                 View Projects
                 <ArrowDown className="w-4 h-4" />
               </a>
-              <a 
-                href="https://github.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn-outline"
-              >
-                <Github className="w-4 h-4" />
-                GitHub
-              </a>
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn-outline"
-              >
-                <Linkedin className="w-4 h-4" />
-                LinkedIn
-              </a>
-              <a 
-                href="#" 
-                className="btn-ghost"
-              >
-                <FileText className="w-4 h-4" />
-                Resume
-              </a>
             </div>
+
+            {/* Resume + Social Icons Row */}
+            <div className="flex flex-wrap items-center gap-4 justify-center md:justify-start mt-6 animate-fade-in" style={{ animationDelay: "0.5s" }}>
+              <a 
+                href="/resume.pdf" 
+                download="Aditya_Mohite_Resume.pdf"
+                className="btn-primary"
+              >
+                <Download className="w-4 h-4" />
+                Download Resume
+              </a>
+              
+              {/* Social Icons */}
+              <div className="flex items-center gap-3">
+                <a 
+                  href="https://github.com/AdityaMohite47" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="social-icon"
+                  aria-label="GitHub Profile"
+                >
+                  <Github className="w-5 h-5" />
+                </a>
+                <a 
+                  href="https://linkedin.com/in/adityamohite" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="social-icon"
+                  aria-label="LinkedIn Profile"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a 
+                  href="mailto:aditya.mohite@example.com"
+                  className="social-icon"
+                  aria-label="Email"
+                >
+                  <Mail className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+
+            {/* GitHub Stats */}
+            <GitHubStats />
           </div>
           
           {/* Profile Image */}
