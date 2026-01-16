@@ -29,7 +29,7 @@ const projects: Project[] = [
       },
       {
         type: "youtube",
-        url: "https://www.youtube.com/watch?v=JPifD5EUVow",
+        url: "https://youtu.be/900mPHrd1K8",
       },
     ],
   },
