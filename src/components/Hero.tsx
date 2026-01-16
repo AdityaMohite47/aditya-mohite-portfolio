@@ -51,7 +51,7 @@ const Hero = () => {
               style={{ animationDelay: "0.5s" }}
             >
               <a
-                href="./public/Resume.docx"
+                href="Resume.docx"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
