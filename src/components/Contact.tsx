@@ -12,29 +12,23 @@ const Contact = () => {
           
           <div className="flex flex-wrap gap-4 justify-center">
             <a
-              href="mailto:aditya@example.com"
-              className="btn-primary"
-            >
-              <Mail className="w-4 h-4" />
-              Email Me
-            </a>
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=aditya@example.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn-primary"
+>
+  <Mail className="w-4 h-4" />
+  Email Me
+</a>
+
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/aditya--mohite/"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline"
             >
               <Linkedin className="w-4 h-4" />
               LinkedIn
-            </a>
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-outline"
-            >
-              <Github className="w-4 h-4" />
-              GitHub
             </a>
           </div>
         </div>
