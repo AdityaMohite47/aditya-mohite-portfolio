@@ -10,7 +10,7 @@ const Hero = () => {
           {/* Text Content */}
           <div className="flex-1 text-center md:text-left">
             <p className="text-primary font-medium mb-4 animate-fade-in">
-              Software Engineer
+              Entry‑Level Software Developer
             </p>
 
             <h1
@@ -24,14 +24,14 @@ const Hero = () => {
               className="text-xl md:text-2xl text-muted-foreground mb-4 animate-fade-in"
               style={{ animationDelay: "0.2s" }}
             >
-              Entry-Level Software Engineer building backend systems and ML-driven applications using Python, LangGraph, and APIs
+              Building backend systems and ML‑driven applications using Python, Django, MongoDB, and LLM workflows.
             </p>
 
             <p
               className="text-muted-foreground mb-8 animate-fade-in"
               style={{ animationDelay: "0.3s" }}
             >
-              Focused on practical software solutions, backend development, and modern LLM workflows
+              Focused on practical backend solutions, REST APIs, and AI‑integrated services.
             </p>
 
             {/* Primary CTA */}
@@ -82,7 +82,7 @@ const Hero = () => {
                 </a>
 
                 <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=mohiteaditya075@gmail.com"
+                  href="mailto:adityamohite.dev@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-icon"
@@ -96,15 +96,13 @@ const Hero = () => {
             <GitHubStats />
           </div>
 
-          {/* Profile Image (FIXED) */}
+          {/* Profile Image */}
           <div
             className="flex-shrink-0 animate-fade-in"
             style={{ animationDelay: "0.2s" }}
           >
             <div className="relative">
-              {/* Outer circular outline */}
               <div className="w-64 h-64 md:w-72 md:h-72 rounded-full bg-gradient-to-br from-primary to-primary/30 p-2">
-                {/* Image container */}
                 <div className="w-full h-full rounded-full overflow-hidden bg-background">
                   <img
                     src="./profile.jpeg"
