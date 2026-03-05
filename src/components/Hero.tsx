@@ -6,7 +6,7 @@ const Hero = () => {
     <section className="min-h-screen flex items-center section-container pt-20">
       <div className="w-full py-20 md:py-0">
         <div className="flex flex-col-reverse md:flex-row items-center gap-12 md:gap-16">
-          
+
           {/* Text Content */}
           <div className="flex-1 text-center md:text-left">
             <p className="text-primary font-medium mb-4 animate-fade-in">
@@ -51,7 +51,7 @@ const Hero = () => {
               style={{ animationDelay: "0.5s" }}
             >
               <a
-                href="Resume.pdf"
+                href="Aditya-Mohite-Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
